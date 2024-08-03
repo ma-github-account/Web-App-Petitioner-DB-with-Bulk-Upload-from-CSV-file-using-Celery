@@ -2,14 +2,14 @@ This application is a petitioner database. Main view contains general informatio
 
 Prerequisites:
 
-pip install django==5.0.7
-pip install celery==5.4.0
-pip install python-decouple==3.8
-pip install django-crispy-forms==2.3
-pip install crispy-bootstrap5==2024.2
-pip install django-ckeditor==6.7.1
-pip install beautifulsoup4==4.12.3
-pip install redis==5.0.7
+- pip install django==5.0.7
+- pip install celery==5.4.0
+- pip install python-decouple==3.8
+- pip install django-crispy-forms==2.3
+- pip install crispy-bootstrap5==2024.2
+- pip install django-ckeditor==6.7.1
+- pip install beautifulsoup4==4.12.3
+- pip install redis==5.0.7
 
 How to run:
 
