@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="container" style="margin-left:30px; width:100%; margin-top:30px;">
+    {% if user.is_authenticated %}
+    <h2 class="text-center">Petitioner Database</h2>
+    
+    <p style="font-size:150%;">Welcome to the Petitioner Database application.</p>
+    <p style="font-size:150%;">You are currently displaying Home page.</p>
+    <p style="font-size:150%;">You can display database records by clicking the button under the text.</p>
+    <p style="font-size:150%;">Be advised that you can upload large numbers of records using bulk upload functionality.</p>
+
+    </br>
+
+    <a href="{% url 'dataentry:data_entry_view' %}" class="btn btn-info" role="button">Database records</a>
+
+
+    
+    {% else %}
+
+    <div class="home-info">
+        <h2 class="text-center">Petitioner Database</h2>
+
+        <div style="display: flex; justify-content: center;">
+            <a href="{% url 'login' %}" class="btn btn-primary">LOGIN</a>
+            &nbsp;<a href="{% url 'register' %}" class="btn btn-success">REGISTER</a>
+        </div>
+    </div>
+
+    {% endif %}
+
+</div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+    {% block content %}
+    {% if user.is_authenticated %}
+
+    <div class="container" style="margin-left:30px; width:100%; margin-top:10px;">
+        <h2 class="text-center">Bulk Upload</h2> 
+        <p style="font-size:110%;">Application accepts csv files formatted in following way:</p>
+        <p style="font-size:110%;">First cell (A,1) should contain table headers: name,age,nationality</p>
+        <p style="font-size:110%;">Cell (A,2) should contain first record i.e.: John Smith,18,English</p>
+        <p style="font-size:110%;">Cell (A,3) should contain second record i.e.: Paul Newman,35,Scottish etc.</p>
+    </div>
+
+
+
+
+    <div class="container mt-5 alert-primary shadow" style="max-width: 600px;padding: 20px; border-radius: 10px;">
+        <h3 class="text-center">Bulk upload from CSV file</h3>
+        <form action="{% url 'dataentry:import_data' %}" method="POST" enctype="multipart/form-data" style="max-width: 600px;margin:auto;padding-top: 20px;">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="file_path">Upload CSV File</label>
+                <input type="file" name="file_path" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Import Data" class="btn btn-primary">
+            </div>
+
+            {% include 'alerts.html' %}
+
+        </form>
+    </div>
+    {% else %}
+    <div class="container mt-5 alert-primary shadow" style="max-width: 600px;padding: 50px; border-radius: 10px;">
+        <h3 class="text-center">User needs to be logged in to use this panel</h3>
+    </div>
+    {% endif %}
+    {% endblock %}
