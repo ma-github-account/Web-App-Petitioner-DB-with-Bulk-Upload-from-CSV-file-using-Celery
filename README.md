@@ -21,9 +21,9 @@ The command:
 celery -A main worker --pool=solo
 
 3.In third command line terminal we initialize django project:
-python manage.py makemigrations
-python manage.py migrate
-python manage.py runserver
+- python manage.py makemigrations
+- python manage.py migrate
+- python manage.py runserver
 
 
 
